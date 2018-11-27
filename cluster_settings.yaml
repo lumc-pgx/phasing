@@ -1,0 +1,19 @@
+# Default parameters for jobs
+__default__:
+  threads: 1
+  vmem: 4G
+
+ccs_amplicon:
+  threads: 1
+  vmem: 8G
+
+# Parameters for ccs_check
+ccs_check:
+  threads: 1
+  vmem: 16G
+
+# Parameters for the ccs_check summary tool
+ccs_check_summary:
+  threads: 1
+  vmem: 8G
+
