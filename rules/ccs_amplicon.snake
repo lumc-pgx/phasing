@@ -11,17 +11,17 @@ def ccs_amplicon_param_string():
 
 rule ccs_amplicon:
     input:
-        ccs_bam = "preprocessor/CCS/{barcode}.bam",
-        subreads_bam = "preprocessor/consolidated/{barcode}.bam"
+        ccs_bam = "phasing/inputs/ccs/{barcode}.bam",
+        subreads_bam = "phasing/inputs/subreads/{barcode}.bam"
     output:
-        fastq = "preprocessor/CCS_Amplicon/{barcode}/haplotypes/{barcode}.fastq",
-        doc = "preprocessor/CCS_Amplicon/{barcode}/phasing/{barcode}.phasing.html",
+        fastq = "phasing/CCS_Amplicon/{barcode}/haplotypes/{barcode}.fastq",
+        doc = "phasing/CCS_Amplicon/{barcode}/phasing/{barcode}.html",
     params:
         amplicon_params = ccs_amplicon_param_string()
     conda:
         "../envs/ccs_amplicon.yaml"
     shell:
-        "ccs_amplicon.workflow -d preprocessor/CCS_Amplicon/{wildcards.barcode} "
+        "ccs_amplicon.workflow -d phasing/CCS_Amplicon/{wildcards.barcode} "
         "-p {wildcards.barcode} "
         "{params.amplicon_params} "
         "{input.ccs_bam} {input.subreads_bam}"

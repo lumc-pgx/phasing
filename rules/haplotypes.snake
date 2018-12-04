@@ -1,10 +1,10 @@
 rule haplotypes:
     input: 
-        a = "preprocessor/CCS_Amplicon/{barcode}/haplotypes/{barcode}.fasta",
-        q = "preprocessor/CCS_Amplicon/{barcode}/haplotypes/{barcode}.fastq"
+        a = "phasing/CCS_Amplicon/{barcode}/haplotypes/{barcode}.fasta",
+        q = "phasing/CCS_Amplicon/{barcode}/haplotypes/{barcode}.fastq"
     output:
-        a = "preprocessor/CCS_Amplicon/haplotypes/{barcode}.fasta",
-        q = "preprocessor/CCS_Amplicon/haplotypes/{barcode}.fastq"
+        a = "phasing/haplotypes/{barcode}.fasta",
+        q = "phasing/haplotypes/{barcode}.fastq"
     shell:
         "ln -sr {input.a} {output.a} && "
         "ln -sr {input.q} {output.q}"
