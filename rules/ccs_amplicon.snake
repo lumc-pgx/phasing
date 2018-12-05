@@ -16,6 +16,7 @@ rule ccs_amplicon:
     output:
         fastq = "phasing/CCS_Amplicon/{barcode}/haplotypes/{barcode}.fastq",
         doc = "phasing/CCS_Amplicon/{barcode}/phasing/{barcode}.html",
+        stats = "phasing/CCS_Amplicon/{barcode}/phasing/{barcode}.phasing.tsv"
     params:
         amplicon_params = ccs_amplicon_param_string()
     conda:
