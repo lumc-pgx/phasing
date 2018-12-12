@@ -13,6 +13,7 @@ dependencies:
   - mafft=7.305
   - samtools=1.9
   - bcftools=1.9
+  - vcflib=1.0.0_rc1
   - snakemake-minimal=5.3.0
   - graphviz=2.38.0
   - pip:
