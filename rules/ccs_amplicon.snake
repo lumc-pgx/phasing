@@ -7,7 +7,20 @@ def ccs_amplicon_param_string():
     :return: A string containing the formatted parameters
     """
     config_params = config["STAGE_PARAMS"].get("CCS_AMPLICON", {})
-    return " ".join(["--"+" ".join([str(x) for x in i]) for i in config_params.items()])
+    
+    def parse_param(pair):
+        """Parse a config entry from the config file"""
+        # convert boolean to flag
+        if pair[1] is True:
+            return [pair[0]]
+    
+        if pair[1] is False:
+            return []
+        
+        return pair
+        
+    return " ".join(["--"+" ".join([str(x) for x in parse_param([*i])]) for i in config_params.items()])
+
 
 rule ccs_amplicon:
     input:
