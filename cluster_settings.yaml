@@ -5,7 +5,7 @@ __default__:
 
 ccs_amplicon:
   threads: 1
-  vmem: 8G
+  vmem: 12G
 
 # Parameters for ccs_check
 ccs_check:
