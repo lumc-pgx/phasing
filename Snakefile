@@ -13,4 +13,3 @@ rule all:
 include: "rules/link_sources.snake"
 include: "rules/ccs_amplicon.snake"
 include: "rules/haplotypes.snake"
-include: "rules/fastq_to_fasta.snake"

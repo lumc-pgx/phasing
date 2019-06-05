@@ -28,8 +28,10 @@ rule ccs_amplicon:
         subreads_bam = "phasing/inputs/subreads/{barcode}.bam"
     output:
         fastq = "phasing/CCS_Amplicon/{barcode}/haplotypes/{barcode}.fastq",
+        fasta = "phasing/CCS_Amplicon/{barcode}/haplotypes/{barcode}.fasta",
         doc = "phasing/CCS_Amplicon/{barcode}/phasing/{barcode}.html",
-        stats = "phasing/CCS_Amplicon/{barcode}/phasing/{barcode}.phasing.tsv"
+        stats = "phasing/CCS_Amplicon/{barcode}/phasing/{barcode}.phasing.tsv",
+        chimeras = "phasing/CCS_Amplicon/{barcode}/haplotypes/{barcode}.chimera_scan.tsv"
     params:
         amplicon_params = ccs_amplicon_param_string()
     conda:

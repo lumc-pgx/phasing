@@ -1,10 +1,14 @@
 rule haplotypes:
     input: 
         a = "phasing/CCS_Amplicon/{barcode}/haplotypes/{barcode}.fasta",
-        q = "phasing/CCS_Amplicon/{barcode}/haplotypes/{barcode}.fastq"
+        q = "phasing/CCS_Amplicon/{barcode}/haplotypes/{barcode}.fastq",
+        c = "phasing/CCS_Amplicon/{barcode}/haplotypes/{barcode}.chimera_scan.tsv"
     output:
         a = "phasing/haplotypes/{barcode}.fasta",
-        q = "phasing/haplotypes/{barcode}.fastq"
+        q = "phasing/haplotypes/{barcode}.fastq",
+        c = "phasing/haplotypes/{barcode}.chimera_scan.tsv"
     shell:
         "ln -sr {input.a} {output.a} && "
-        "ln -sr {input.q} {output.q}"
+        "ln -sr {input.q} {output.q} && "
+        "ln -sr {input.c} {output.c}"
+

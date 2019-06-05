@@ -3,19 +3,19 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - python=3.5
+  - python=3.7
   - bam2fastx=1.3.0
   - pblaa=2.4.2
   - ngmlr=0.2.7
-  - whatshap=0.17
+  - whatshap=0.18
   - click=7.0
-  - bamtools=2.4.1
-  - mafft=7.305
-  - samtools=1.9
+  - bamtools=2.5.1
+  - mafft=7.407
   - bcftools=1.9
-  - vcflib=1.0.0_rc1
+  - samtools=1.9
+  - vcflib=1.0.0_rc2
   - vt=2015.11.10
-  - snakemake-minimal=5.3.0
-  - graphviz=2.38.0
+  - snakemake-minimal=5.5.0
+  - graphviz=2.40.1
   - pip:
     - "git+ssh://git@git.lumc.nl/wgallard/ccs_amplicon@master#egg=ccs_amplicon"
