@@ -3,16 +3,10 @@ from pipe_helper import PipeHelper
 class PhasingHelper(PipeHelper):
     @property
     def outputs(self):
-        # determine the files to be generated depending on which stages are to be run
-        do_CCS_check = self._config.get("STAGE_PARAMS", {}).get("CCS_CHECK", False)
-        
+        # determine the files to be generated
         targets = expand("phasing/haplotypes/{barcodes}.fast{fastx}", barcodes=self.barcode_ids, fastx=("a", "q"))
         targets += expand("phasing/haplotypes/{barcodes}.chimera_scan.tsv", barcodes=self.barcode_ids)
         targets += expand("phasing/CCS_Amplicon/{barcodes}/phasing/{barcodes}.html", barcodes=self.barcode_ids)
         targets += expand("phasing/CCS_Amplicon/{barcodes}/phasing/{barcodes}.phasing.tsv", barcodes=self.barcode_ids)
-
-        if do_CCS_check:
-            pass
-        #    targets += expand("phasing/ccs_check_summary/{barcodes}.{ext}", barcodes=self.barcode_ids, ext=("html", "csv"))
 
         return targets

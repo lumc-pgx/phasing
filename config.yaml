@@ -9,10 +9,6 @@ SUBREADS_FOLDER: /path/to/subreads/folder
 # Path to barcode fasta file used for demultiplexing
 BARCODES: /path/to/barcodes.fasta  
 
-# Path to the genome fasta file to be used for mapping/alignment
-# The location of this file should be writable so that indexes can be created
-GENOME: /path/to/genome.fasta
-
 # params for individual stages
 # to disable a stage, remove its parameters
 STAGE_PARAMS:
@@ -20,14 +16,20 @@ STAGE_PARAMS:
     min-ccs-length: 6000
     max-ccs-length: 7000
     min-ccs-passes: 1
-    min-ccs-qual: 0.98
+    min-ccs-qual: 0.95
     max-homopolymer: 2
+    trim-ends: 0
     tsne-iterations: 5000
     tsne-rate: 50
-    cluster-percentile: 80
+    cluster-percentile: 10
     cluster-inflation: 1.4
     cluster-size-threshold: 0.2
-    cluster-fraction: 0.8
-    consensus-fraction: 0.51
+    max-cluster-size: 300
+    consensus-fraction: 0.25
     min-haplotype-molecules: 10
     min-variant-qual: 50
+    max-phasing-seqs: 100
+    forward-primer: GCAGTCGAACATGTAGCTGACTCAGGTCACATGGCAGCTGCCATACAATCCACCTG
+    reverse-primer: TGGATCACTTGTGCAAGCATCACATCGTAGCGACTGAGCCCTGGGAGGTAGGTAG
+    max-primer-dist: 5
+
