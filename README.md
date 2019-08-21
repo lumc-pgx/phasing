@@ -17,7 +17,7 @@ The phasing module generates phased and polished allele sequences:
   - `git clone https://github.com/lumc-pgx/phasing.git`
 
 - Change to the phasing directory
-  - `cd phasing
+  - `cd phasing`
 
 - Create a conda environment for running the pipeline
   - `conda env create -n phasing -f environment.yaml`
